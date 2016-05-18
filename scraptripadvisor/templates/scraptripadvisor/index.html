@@ -1,15 +1,44 @@
-{# this is a comment that should not be rendered #}
+{% load staticfiles %}
+{# Load the tag library #}
+{% load bootstrap3 %}
 
-This is where we will present the scrapped data from trip advisor<br><br>
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 
-We need:<br>
-1) to import the list containing the data<br>
-2) to iterate through the list to display the data<br>
-3) change from local file to scrapping capabilities straightaway to avoid issue with offline/online connection<br>
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 
-<br><br>
+<link rel"stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
+<div class="row">
 
+  <div class="col-md-1">
+  </div>
+
+  <div class="col-md-11">
+    <div class="page-header">
+    <h1>Scrapta Singy <small> Singy places by # of recommendations</small></h1>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-1">
+  </div>
+
+  <div class="col-md-8">
+  <body>
 {% for item in list %}
     {{ item }}<br>
 {% endfor %}
+  </body>
+  </div>
+
+  <div class="col-md-3">
+  </div>
+
+</div>
+
+
